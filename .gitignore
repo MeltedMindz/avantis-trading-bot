@@ -71,8 +71,8 @@ secrets/
 *.key
 *.pem
 
-# SDK (installed via pip)
-avantis_trader_sdk/
+# SDK is now included as a submodule
+# avantis_trader_sdk/
 
 # Test outputs
 test_results/

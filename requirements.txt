@@ -1,4 +1,5 @@
-git+https://github.com/Avantis-Labs/avantis_trader_sdk.git
+# Avantis SDK (included as submodule)
+-e ./avantis_trader_sdk
 asyncio
 websockets>=11.0
 python-dotenv>=1.0.0

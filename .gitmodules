@@ -1,0 +1,3 @@
+[submodule "avantis_trader_sdk"]
+	path = avantis_trader_sdk
+	url = https://github.com/Avantis-Labs/avantis_trader_sdk.git

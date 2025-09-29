@@ -4,7 +4,7 @@ A comprehensive trading bot for the Avantis decentralized exchange, built with t
 
 ## 🚀 Features
 
-- **Official SDK Integration**: Uses the real [Avantis Trader SDK](https://github.com/Avantis-Labs/avantis_trader_sdk)
+- **📦 Complete SDK Integration**: Includes the official [Avantis Trader SDK](https://github.com/Avantis-Labs/avantis_trader_sdk) as a submodule - no separate installation needed!
 - **🎯 10% Daily Returns Mode**: Aggressive compound growth system designed for consistent daily profits
 - **Multiple Trading Strategies**: DCA, Momentum, Mean Reversion, Grid Trading, Breakout
 - **Advanced Risk Management**: Position sizing, drawdown limits, leverage control
@@ -13,6 +13,7 @@ A comprehensive trading bot for the Avantis decentralized exchange, built with t
 - **CLI Interface**: Command-line management with live dashboard
 - **Backtesting**: Historical strategy testing capabilities
 - **Compound Growth Tracking**: Automatic reinvestment and compound growth calculation
+- **One-Command Setup**: Automated setup script for easy installation
 
 ## 📋 Requirements
 
@@ -22,21 +23,38 @@ A comprehensive trading bot for the Avantis decentralized exchange, built with t
 
 ## 🛠️ Installation
 
-1. **Clone the repository:**
+1. **Clone the repository with submodules:**
    ```bash
-   git clone <your-repo-url>
-   cd Avantis
+   git clone --recurse-submodules https://github.com/MeltedMindz/avantis-trading-bot.git
+   cd avantis-trading-bot
    ```
 
-2. **Install dependencies:**
+2. **Run the setup script:**
    ```bash
+   chmod +x setup.sh
+   ./setup.sh
+   ```
+
+   **OR manually:**
+   ```bash
+   # Initialize SDK submodule
+   git submodule update --init --recursive
+   
+   # Install dependencies
    pip install -r requirements.txt
+   
+   # Set up configuration
+   cp config.env.example .env
+   cp config_aggressive.env.example config_aggressive.env
    ```
 
-3. **Set up environment:**
+3. **Configure your settings:**
    ```bash
-   cp config.env.example .env
-   # Edit .env with your private key and configuration
+   # Edit .env with your private key
+   nano .env
+   
+   # Edit aggressive trading settings
+   nano config_aggressive.env
    ```
 
 ## ⚙️ Configuration
