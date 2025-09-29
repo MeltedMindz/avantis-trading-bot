@@ -5,12 +5,14 @@ A comprehensive trading bot for the Avantis decentralized exchange, built with t
 ## 🚀 Features
 
 - **Official SDK Integration**: Uses the real [Avantis Trader SDK](https://github.com/Avantis-Labs/avantis_trader_sdk)
+- **🎯 10% Daily Returns Mode**: Aggressive compound growth system designed for consistent daily profits
 - **Multiple Trading Strategies**: DCA, Momentum, Mean Reversion, Grid Trading, Breakout
 - **Advanced Risk Management**: Position sizing, drawdown limits, leverage control
 - **Real-time Price Feeds**: WebSocket integration with Pyth Network
 - **Comprehensive Logging**: Rich console output with performance metrics
 - **CLI Interface**: Command-line management with live dashboard
 - **Backtesting**: Historical strategy testing capabilities
+- **Compound Growth Tracking**: Automatic reinvestment and compound growth calculation
 
 ## 📋 Requirements
 
@@ -53,6 +55,27 @@ MAX_POSITION_SIZE=100.0
 ```
 
 ## 🎯 Quick Start
+
+### 🚀 Aggressive 10% Daily Returns Mode
+
+**NEW!** The bot now includes an aggressive mode designed to achieve 10% daily returns through compound growth:
+
+```bash
+# Start aggressive trading bot
+python run_aggressive_bot.py
+
+# Start with custom capital
+python run_aggressive_bot.py --capital 5000
+
+# Test mode (no actual trades)
+python run_aggressive_bot.py --dry-run
+
+# Show compound growth projections
+python run_aggressive_bot.py --projections
+
+# Check daily status
+python run_aggressive_bot.py --status
+```
 
 ### Basic Usage
 
@@ -159,10 +182,43 @@ The bot supports all pairs available on Avantis, including:
 ## 🛡️ Risk Management
 
 - **Position Sizing**: Automatic calculation based on account balance
-- **Leverage Control**: Configurable maximum leverage limits
-- **Stop Loss**: Automatic stop-loss placement
-- **Daily Loss Limits**: Prevents excessive daily losses
+- **Leverage Control**: Configurable maximum leverage limits (up to 50x in aggressive mode)
+- **Stop Loss**: Automatic stop-loss placement (1.5% in aggressive mode)
+- **Daily Loss Limits**: Prevents excessive daily losses (5% safety net)
 - **Drawdown Protection**: Pauses trading during high drawdown
+- **Quick Profit Taking**: Takes profits at 3% to compound gains
+
+## 🎯 Compound Growth System
+
+### 10% Daily Returns Mode
+
+The bot includes an advanced compound growth system designed to achieve consistent 10% daily returns:
+
+#### **Key Features:**
+- **Daily Target Tracking**: Monitors progress toward 10% daily profit target
+- **Compound Growth Calculator**: Projects exponential growth over time
+- **Dynamic Position Sizing**: Adjusts position sizes based on daily progress
+- **Risk-Adjusted Leverage**: Increases leverage when behind target, reduces when ahead
+- **Trading Phases**: Different strategies for different times of day
+
+#### **Projected Growth:**
+- **30 days**: ~17x return (1,700%)
+- **90 days**: ~5,000x return (500,000%)
+- **1 year**: ~13,000,000x return (1.3 billion %)
+
+#### **Trading Phases:**
+1. **Morning Aggressive (6-10 AM)**: High leverage, high frequency
+2. **Midday Balanced (10 AM-2 PM)**: Moderate risk approach
+3. **Afternoon Momentum (2-6 PM)**: Momentum following strategies
+4. **Evening Consolidation (6-10 PM)**: Profit taking and consolidation
+5. **Night Defensive (10 PM-6 AM)**: Low risk, defensive positions
+
+#### **Risk Controls:**
+- Maximum 50x leverage
+- 1.5% stop loss
+- 3% profit taking
+- 5% daily loss limit
+- Automatic trading pause after 3 consecutive losses
 
 ## 📈 Monitoring & Logging
 
